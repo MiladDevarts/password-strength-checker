@@ -20,17 +20,14 @@ const usernameChecker = function () {
     let usernameValue = document.querySelector('#usernameInput').value;
     let errorMessage = "";
 
+//conditions for showing error to choosing correct username//
+    if  (usernameValue != ""){
+    if ((usernameValue.match(/[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) || usernameValue.length >= 16) {
 
-    if (usernameValue != "") {
-        if (usernameValue.length >= 16) {
+        errorMessage = "Please Decrease usename lenght less than 16! and don't use /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/";
 
-            errorMessage = "Please Decrease usename lenght less than 16!";
-
-        } else if (usernameValue.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) {
-
-
-        }
-    } else {
+        } }
+     else {
         errorMessage = "Please Fill!";
     }
 
